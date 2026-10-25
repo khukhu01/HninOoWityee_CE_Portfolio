@@ -1,0 +1,473 @@
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #1a1a1a;
+    --bg-color: #f4f7f6;
+    --text-color: #333;
+    --muted-color: #666;
+    --card-bg: #ffffff;
+    --accent-color: #66b3ff;
+    --border-color: #e4e8eb;
+    --soft-blue: #f0f7ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+/* Navigation */
+.nav-bar {
+    background: var(--secondary-color);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-name {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.nav-links a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Project hero */
+.project-hero {
+    background: var(--secondary-color);
+    color: white;
+    padding: 5rem 2rem 4rem;
+}
+
+.hero-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.eyebrow {
+    color: var(--accent-color);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    margin-bottom: 1rem;
+}
+
+.project-hero h1 {
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    max-width: 850px;
+}
+
+.hero-subtitle {
+    color: #d7d7d7;
+    font-size: 1.15rem;
+    max-width: 750px;
+}
+
+.hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: 1.5rem;
+}
+
+.hero-meta span {
+    border: 1px solid #555;
+    color: #ddd;
+    border-radius: 4px;
+    padding: 0.3rem 0.65rem;
+    font-size: 0.78rem;
+}
+
+/* Main layout */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+section {
+    background: var(--card-bg);
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+section p + p {
+    margin-top: 1rem;
+}
+
+.section-label {
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.35rem;
+}
+
+h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+ul {
+    padding-left: 1.25rem;
+}
+
+/* Project overview */
+.project-highlight {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.75rem;
+}
+
+.project-highlight > div {
+    background: var(--soft-blue);
+    border-left: 3px solid var(--primary-color);
+    padding: 1rem;
+}
+
+.project-highlight strong {
+    display: block;
+    color: var(--primary-color);
+    margin-bottom: 0.35rem;
+}
+
+.project-highlight span {
+    color: #4f5b63;
+    font-size: 0.9rem;
+}
+
+/* Contribution cards */
+.contribution-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contribution-card {
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+    padding: 1.25rem;
+}
+
+.contribution-card h3 {
+    color: var(--secondary-color);
+}
+
+.contribution-card li {
+    margin-bottom: 0.45rem;
+    font-size: 0.92rem;
+}
+
+/* Hardware */
+.hardware-list {
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.hardware-item {
+    display: grid;
+    grid-template-columns: 105px 1fr;
+    gap: 1rem;
+    align-items: start;
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+    padding: 1rem;
+}
+
+.hardware-item p {
+    color: var(--muted-color);
+}
+
+.pin {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: white;
+    border-radius: 4px;
+    padding: 0.35rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.diagram-title {
+    margin-top: 2rem;
+}
+
+.diagram-container {
+    display: flex;
+    justify-content: center;
+    margin: 1.25rem 0 0;
+    background: #fafcfd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    overflow-x: auto;
+}
+
+/* Thresholds */
+.threshold-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0 0.75rem;
+}
+
+.threshold-card {
+    background: var(--soft-blue);
+    border: 1px solid #dcecfb;
+    border-radius: 7px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.threshold-card span {
+    display: block;
+    color: var(--muted-color);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.threshold-card strong {
+    display: block;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-top: 0.25rem;
+}
+
+.small-note {
+    color: var(--muted-color);
+    font-size: 0.82rem;
+}
+
+/* Code */
+pre {
+    background: #222;
+    color: #f4f4f4;
+    padding: 1.25rem;
+    border-radius: 7px;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-top: 1.25rem;
+}
+
+.code-explanation {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    background: var(--soft-blue);
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* Dashboard */
+.dashboard-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.dashboard-features div {
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 7px;
+}
+
+.dashboard-features strong,
+.dashboard-features span {
+    display: block;
+}
+
+.dashboard-features strong {
+    margin-bottom: 0.25rem;
+}
+
+.dashboard-features span {
+    color: var(--muted-color);
+    font-size: 0.9rem;
+}
+
+.single-image {
+    max-width: 800px;
+    margin: 1.5rem auto 0;
+    text-align: center;
+}
+
+.single-image img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 7px;
+    border: 1px solid var(--border-color);
+}
+
+.image-caption {
+    color: var(--muted-color);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+/* Challenge */
+.lesson-box {
+    margin-top: 1.5rem;
+    background: var(--soft-blue);
+    border-left: 4px solid var(--primary-color);
+    padding: 1.25rem;
+}
+
+.lesson-box strong {
+    color: var(--primary-color);
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.gallery figure {
+    margin: 0;
+}
+
+.gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 7px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease;
+}
+
+.gallery img:hover {
+    transform: translateY(-2px);
+}
+
+.gallery figcaption {
+    text-align: center;
+    color: var(--muted-color);
+    font-size: 0.82rem;
+    margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--secondary-color);
+    color: white;
+    margin-top: 2rem;
+}
+
+footer a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 750px) {
+    .nav-bar {
+        padding: 0.9rem 1rem;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .nav-links {
+        gap: 0.6rem 0.9rem;
+    }
+
+    .nav-links a {
+        font-size: 0.75rem;
+    }
+
+    .project-hero {
+        padding: 4rem 1.5rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    section {
+        padding: 1.4rem;
+    }
+
+    .project-highlight,
+    .contribution-grid,
+    .dashboard-features,
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .threshold-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hardware-item {
+        grid-template-columns: 1fr;
+    }
+
+    .pin {
+        width: fit-content;
+    }
+
+    .gallery img {
+        height: auto;
+        max-height: 400px;
+    }
+}

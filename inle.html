@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Water Quality Control | Hnin Oo Wityee</title>
+
+    <link rel="stylesheet" href="inle.css">
+
+    <!-- Mermaid is used for the system diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <a href="index.html" class="nav-name">Hnin Oo Wityee</a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#overview">Overview</a>
+            <a href="#hardware">Hardware</a>
+            <a href="#software">Software</a>
+            <a href="#challenge">Challenge</a>
+            <a href="#gallery">Gallery</a>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <header class="project-hero">
+        <div class="hero-inner">
+            <p class="eyebrow">EMBEDDED SYSTEMS · IoT · WATER TREATMENT</p>
+
+            <h1>IoT Water Quality Control System</h1>
+
+            <p class="hero-subtitle">
+                Inle Lake Pollution and Feasible Water Treatment Methods in Myanmar
+            </p>
+
+            <div class="hero-meta">
+                <span>ESP32</span>
+                <span>C++</span>
+                <span>HTML / CSS / JavaScript</span>
+                <span>Sensors</span>
+                <span>Relays & Pumps</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Overview -->
+        <section id="overview">
+            <div class="section-label">01 · PROJECT</div>
+            <h2>What We Built</h2>
+
+            <p>
+                This project started with a question about how technology could help with
+                water pollution in Myanmar, particularly around Inle Lake. Our team explored
+                feasible water treatment methods and built a small automated prototype to
+                demonstrate how water quality could be monitored and routed through different
+                stages of the system.
+            </p>
+
+            <p>
+                The prototype uses an ESP32 to read turbidity and TDS sensors and make a
+                routing decision based on predefined thresholds. Depending on the readings,
+                relays control different pumps so that water can either be sent back to
+                filtration stage or moved to a storage tank.
+            </p>
+
+            <p>
+                We also connected the ESP32 to a web dashboard so that the sensor readings
+                and system status could be viewed in real time and can be controlled
+                remotely. 
+            </p>
+
+            <div class="project-highlight">
+                <div>
+                    <strong>Project focus</strong>
+                    <span>Water pollution and practical water treatment in Myanmar</span>
+                </div>
+
+                <div>
+                    <strong>My main interests in this project</strong>
+                    <span>Embedded systems, sensors, automation and IoT</span>
+                </div>
+
+                <div>
+                    <strong>Recognition</strong>
+                    <span>Certificate of Appreciation · ConceptX International School Art & Science Exhibition 2026</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Contribution -->
+        <section id="contribution">
+            <div class="section-label">02 · MY ROLE</div>
+            <h2>What I Worked On</h2>
+
+            <p>
+                This was a team project, so different parts were developed together. My work
+                focused mainly on the electronics, programming and the connection between the
+                physical system and the web interface.
+            </p>
+
+            <div class="contribution-grid">
+                <div class="contribution-card">
+                    <h3>Embedded Hardware</h3>
+                    <ul>
+                        <li>Worked with the ESP32 and sensor inputs</li>
+                        <li>Connected turbidity and TDS sensors</li>
+                        <li>Worked with relays and pump control</li>
+                        <li>Helped assemble and test the physical prototype</li>
+                    </ul>
+                </div>
+
+                <div class="contribution-card">
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>Worked with the C++ control logic</li>
+                        <li>Implemented threshold-based water status decisions</li>
+                        <li>Connected sensor readings to relay actions</li>
+                        <li>Worked on the ESP32 web dashboard</li>
+                    </ul>
+                </div>
+
+                <div class="contribution-card">
+                    <h3>Testing & Debugging</h3>
+                    <ul>
+                        <li>Tested the water-routing cycle</li>
+                        <li>Investigated pump and tubing problems</li>
+                        <li>Adjusted the physical tubing layout</li>
+                        <li>Tested the system again after changes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hardware -->
+        <section id="hardware">
+            <div class="section-label">03 · HARDWARE</div>
+            <h2>System Architecture</h2>
+
+            <p>
+                The physical prototype uses several small tanks connected with tubing and
+                submersible pumps. The ESP32 sits in the middle of the system: it receives
+                measurements from the sensors and controls the pumps through relay outputs.
+            </p>
+
+            <div class="hardware-list">
+                <div class="hardware-item">
+                    <span class="pin">ESP32</span>
+                    <div>
+                        <h3>Microcontroller</h3>
+                        <p>
+                            Handles the control logic, reads the sensors and provides the
+                            Wi-Fi connection for the web dashboard.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hardware-item">
+                    <span class="pin">GPIO 34</span>
+                    <div>
+                        <h3>Turbidity Sensor</h3>
+                        <p>
+                            Provides an analog reading related to the cloudiness of the water.
+                            The project converts the reading into an estimated turbidity value.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hardware-item">
+                    <span class="pin">GPIO 35</span>
+                    <div>
+                        <h3>TDS Sensor</h3>
+                        <p>
+                            Provides an analog measurement used by the project to estimate
+                            total dissolved solids.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hardware-item">
+                    <span class="pin">25 · 26 · 27</span>
+                    <div>
+                        <h3>Relay Outputs</h3>
+                        <p>
+                            Control the intake, re-cleaning and storage pumps used in the
+                            water-routing cycle.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="diagram-title">Hardware Connection</h3>
+
+            <div class="diagram-container">
+                <div class="mermaid">
+                    graph LR
+                        TDS[TDS Sensor] --> P35((GPIO 35))
+                        TURB[Turbidity Sensor] --> P34((GPIO 34))
+
+                        P35 --> ESP{ESP32}
+                        P34 --> ESP
+
+                        ESP --> P25((GPIO 25))
+                        ESP --> P26((GPIO 26))
+                        ESP --> P27((GPIO 27))
+
+                        P25 --> R1[Relay 1<br/>Intake Pump]
+                        P26 --> R2[Relay 2<br/>Re-clean Pump]
+                        P27 --> R3[Relay 3<br/>Storage Pump]
+                </div>
+            </div>
+        </section>
+
+        <!-- Software -->
+        <section id="software">
+            <div class="section-label">04 · SOFTWARE</div>
+            <h2>How the System Makes Decisions</h2>
+
+            <p>
+                The control program is written in C++. The ESP32 repeatedly reads the two
+                sensors and compares the readings with the limits we set for the prototype.
+                If either reading is above its limit, the water is labelled as
+                <strong>POLLUTED</strong> by the system and the re-cleaning route is activated.
+                If both readings are within the limits, the system can route the water to storage.
+            </p>
+
+            <div class="threshold-grid">
+                <div class="threshold-card">
+                    <span>TURBIDITY LIMIT</span>
+                    <strong>50 NTU</strong>
+                </div>
+
+                <div class="threshold-card">
+                    <span>TDS LIMIT</span>
+                    <strong>600 ppm</strong>
+                </div>
+            </div>
+
+
+            <h3 class="diagram-title">Autonomous Routing Logic</h3>
+
+            <div class="diagram-container">
+                <div class="mermaid">
+                    graph TD
+                        A([Start<br/>Raw Water Intake]) --> B[Read Turbidity & TDS]
+                        B --> C{Above Prototype Limits?}
+
+                        C -- Yes --> D[Mark as POLLUTED]
+                        D --> E[Activate Re-clean Pump]
+                        E --> F[Return to Filtration]
+                        F --> B
+
+                        C -- No --> G[Mark as CLEAN]
+                        G --> H[Activate Storage Pump]
+                        H --> I([Move to Clean Reservoir])
+                </div>
+            </div>
+        </section>
+
+        <!-- Code -->
+        <section id="code">
+            <div class="section-label">05 · CODE</div>
+            <h2>Connecting Sensor Readings to Hardware</h2>
+
+            <p>
+                One of the parts I liked most about this project was seeing a sensor reading
+                turn into a physical action. The basic logic is simple: read the sensors,
+                check the limits, and then decide which relay should be active.
+            </p>
+
+            <pre><code>// Read the sensors
+turbidityNTU = readTurbidityNTU();
+tdsValue = readTDSppm();
+
+// Check the prototype limits
+if (turbidityNTU > NTU_LIMIT || tdsValue > TDS_LIMIT) {
+    waterStatus = "POLLUTED";
+} else {
+    waterStatus = "CLEAN";
+}
+
+// Route the water
+if (pump1State) {
+    if (turbidityNTU > NTU_LIMIT || tdsValue > TDS_LIMIT) {
+        digitalWrite(RELAY_PUMP2, LOW);   // Re-clean
+        digitalWrite(RELAY_PUMP3, HIGH);  // Stop storage
+    } else {
+        digitalWrite(RELAY_PUMP2, HIGH);  // Stop re-cleaning
+        digitalWrite(RELAY_PUMP3, LOW);   // Store
+    }
+}</code></pre>
+
+            <div class="code-explanation">
+                <strong>What this shows:</strong>
+                <span>
+                    The program links analog sensor measurements to digital relay control,
+                    creating the feedback loop that makes the prototype automatic.
+                </span>
+            </div>
+        </section>
+
+        <!-- Web Dashboard -->
+        <section id="dashboard">
+            <div class="section-label">06 · IoT</div>
+            <h2>Web Dashboard</h2>
+
+            <p>
+                The ESP32 also hosts a web page that displays the current sensor readings and
+                system status. The dashboard lets us see the values without having to inspect
+                the hardware directly.
+            </p>
+
+            <div class="dashboard-features">
+                <div>
+                    <strong>Live readings</strong>
+                    <span>TDS and water-status information</span>
+                </div>
+
+                <div>
+                    <strong>Remote controls</strong>
+                    <span>Buttons for the pump controls used in the prototype</span>
+                </div>
+
+                <div>
+                    <strong>Wireless connection</strong>
+                    <span>ESP32 provides the connection between the hardware and dashboard</span>
+                </div>
+            </div>
+
+            <div class="single-image">
+                <img src="web.jpg" alt="ESP32 web dashboard showing TDS reading and water status">
+                <p class="image-caption">The web dashboard during testing.</p>
+            </div>
+        </section>
+
+        <!-- Challenge -->
+        <section id="challenge">
+            <div class="section-label">07 · DEBUGGING</div>
+            <h2>When the Hardware Didn't Cooperate</h2>
+
+            <p>
+                One of the most useful parts of this project happened when the code seemed to
+                be working, but the physical system wasn't. Our pumps kept losing their prime
+                because air was getting trapped in the tubing.
+            </p>
+
+            <p>
+                At first, this was frustrating because the relay logic was behaving as expected.
+                We eventually realised that the problem was in the physical arrangement rather
+                than the program. Air was collecting at high points in the tubing, and the pumps
+                were also creating small whirlpools that could pull air into the intake.
+            </p>
+
+            <p>
+                We shortened and re-routed the tubing to reduce places where air could become
+                trapped, and we positioned the pump intakes deeper in the tanks. After making
+                these changes, we tested the cycle again.
+            </p>
+
+            <div class="lesson-box">
+                <strong>What I learned</strong>
+                <p>
+                    This was probably the part of the project that taught me the most.
+                    With embedded systems, getting the code right is only one part of the job.
+                    The sensors, wiring, pumps, tubing and the environment all have to work
+                    together too.
+                </p>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery">
+            <div class="section-label">08 · EVIDENCE</div>
+            <h2>Project Gallery</h2>
+
+            <div class="gallery">
+                <figure>
+                    <img src="circuit.jpg" alt="Physical water treatment prototype with tanks, tubing and electronics">
+                    <figcaption>Physical prototype during testing.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="web.jpg" alt="ESP32 web dashboard displayed on a monitor">
+                    <figcaption>Live web dashboard and sensor readings.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="certificate.jpg" alt="Certificate of Appreciation for Hnin Oo Wityee">
+                    <figcaption>Certificate of Appreciation · ConceptX International School Art & Science Exhibition 2026.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Reflection -->
+        <section id="reflection">
+            <div class="section-label">09 · REFLECTION</div>
+            <h2>What I Took Away From the Project</h2>
+
+            <p>
+                Before this project, I mostly thought about programming and hardware as separate
+                things. Working on the water system made me understand how closely they are
+                connected when you're building something that has to work in the real world.
+            </p>
+
+            <p>
+                I also became more comfortable with debugging. Sometimes the answer wasn't in
+                the code at all. We had to look at the physical setup, change something, test it,
+                and then try again. That process made me more interested in embedded systems
+                because there is always a connection between what the program says and what the
+                hardware actually does.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Hnin Oo Wityee · Computer Engineering Portfolio</p>
+        <a href="index.html">← Back to Portfolio Home</a>
+    </footer>
+
+</body>
+</html>
