@@ -383,6 +383,7 @@ footer {
 }
 
 footer a {
+    text-align: center;
     display: inline-block;
     margin-top: 0.5rem;
     color: var(--accent-color);
